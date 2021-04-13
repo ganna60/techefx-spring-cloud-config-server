@@ -11,4 +11,3 @@ spring:
 server:
   port: ${port:8888}
 
-#pring.cloud.config.server.git.default-label=main
