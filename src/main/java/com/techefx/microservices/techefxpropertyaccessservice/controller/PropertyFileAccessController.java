@@ -20,7 +20,7 @@ public class PropertyFileAccessController {
     PropertyAccessBean propertyAccessBean;
 
     @GetMapping("/accessPropertyFile")
-    public PropertyAccessValue accesPropertyFile(){
+    public PropertyAccessValue accesPropertyFile() {
 
         System.out.println("before refresh");
 
@@ -30,14 +30,14 @@ public class PropertyFileAccessController {
     }
 
 
-    public void refreshActuator(){
+    public void refreshActuator() {
         RestTemplate restTemplate = new RestTemplate();
         final String baseUrl = "http://localhost:8100/actuator/refresh";
 
         System.out.println(baseUrl);
 
-        HttpHeaders headers=new HttpHeaders();
-        headers.set("Content-Type","application/json");
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Content-Type", "application/json");
         HttpEntity entity = new HttpEntity(headers);
 
         ResponseEntity<String> results = restTemplate.postForEntity(baseUrl, entity, String.class);
